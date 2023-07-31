@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Income Tracker</title>
+	<link rel="stylesheet" href="income_tracker.css">
+	<script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+<div class="full-body">
+      <div class="title">INCOME TRACKER</div>
+      <div class="container">
+          <div class="income">
+              <a href="#" class="buttons" onclick="add_income_page()">Add income earned</a>
+              <div class="available-income">
+                  <div class="sub-title">Income</div>
+                  <table class="income-table" cellspacing="10px" cellpadding="8px 20px" id="tab">
+                      <tr style="border-bottom: 1px solid white">
+                      <th><b>Sl.No</b></th>
+                      <th><b>Amount</b></th>
+                      <th><b>Category</b></th> 
+                      <th><b>Date</b></th>
+                      <th><b>Note</b></th>
+                      </tr>
+                  </table>
+              </div>
+              <form action="#" class="add-new-income" id="f1">
+                  <span>
+                      <label for="amount">Amount:</label>
+                      <input type="number" class="form-input" name="amount" placeholder="How much?">
+                  </span> <span>
+                    <label for="amount">Category</label>
+                    <select name="category" id="category" class="form-input">
+                    	<option value="Salary">Salary</option>
+                        <option value="Bonus">Bonus</option>
+                        <option value="Reimbursment">Reimbursment</option>
+                        <option value="Arrears">Arrears</option>
+                        <option value="Incentive">Incentive</option>
+                        <option value="others">Others</option>
+                    </select>
+                </span> <span>
+                    <label for="date">Date:</label>
+                    <input type="date" class="form-input" name="date" placeholder="dd-mm-yy">
+                </span> <span>
+                    <label for="note">Note:</label>
+                    <input type="text" class="form-input" name="note" placeholder="What did you spend on?">
+                </span>
+                <span>
+                    <a href="#" class="buttons" style="font-size: 15px;padding: 8px 10px;" onclick="add_income()">Submit</a>
+                </span>
+              </form>
+          </div>
+<div class="chart1">
+          <div class="tt">Total
+            <div class="tot"></div></div>
+<button class="buttons" style="background-color: rgb(239, 60, 60);"   onclick="ExportToExcel('xlsx')">Download excel</button>
+<div>
+
+</div>
+          </div>
+
+        <div class="category">
+              <a href="#" class="buttons" onclick="add_category_page()">Add Category</a>
+              <br>
+              <div class="sub-title">
+                  Categories
+
+              </div>
+
+            
+              <div class="available-categories">
+                <span>Salary<span class="sum"></span></span>
+                  <span>Bonus<span class="sum"></span></span>
+                  <span>Reimbursment<span class="sum"></span></span>
+                  <span>Arrears<span class="sum"></span></span>
+                  <span>Incentive<span class="sum"></span></span>
+                  <span>Others<span class="sum"></span></span>
+              </div>
+              <form action="#" class="add-category" id="f2">
+                  <span>
+                  <label for="category">Category Name:</label>
+                  <input type="text" class="form-input" name="new-category" placeholder="Enter category name "></span>
+                  <span>
+                      <a href="#" class="buttons" onclick="add_category()">Submit</a>
+                  </span>
+
+              </form>
+          </div>
+      </div>
+      </div>
+       <script src="income.js"></script>
+
+</body>
+</html>
